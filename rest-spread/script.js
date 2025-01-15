@@ -13,20 +13,17 @@ secArticle.append(secContainer);
 
 const sum = (x, y, z) => {
   return x + y + z;
-}
+};
 
 const nums = [1, 2, 3];
 
 console.log(sum(...nums));
 
-
-const array = [1,2,3];
+const array = [1, 2, 3];
 const obj = { ...array };
 console.log(obj);
 
-
 /** End of Basic Example */
-
 
 const data = [
   {
@@ -69,21 +66,19 @@ const data = [
     },
     uuid: "7d02d3e9-ae04-4b99-b823-e42473425e4a",
     objectId: "65f12bea7cbf545024ea28db",
-  }
+  },
 ];
 
 const getRootData = () => {
   return data;
-}
+};
 
 const getContenData = (id) => {
   return data.find((d) => d.id === id);
-}
+};
 const dataCollection = getContenData(1);
 
-const {
-  devices
-} = dataCollection;
+const { devices } = dataCollection;
 
 // using ...devices to array
 let dataOfArray = ["32'Monitor", "Nintendo Switch", ...devices];
