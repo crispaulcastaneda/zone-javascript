@@ -74,3 +74,51 @@ const printForecast = function (arr) {
 
 printForecast(data1);
 printForecast(data2);
+
+////////////////////////////////
+// CHALLENGE
+/* Let's say you're building a time tracking app for the freelancers.
+  At some point in building this app, you need to create a function that receives daily work hours as an array and returns an object with the following properties:
+
+  1. Total hours worked
+  2. average daily hours worked
+  3. The day with the most hours worked
+  4. number of days worked
+  5. Whether the week was full-time (40 hours) or part-time (less than 40 hours)
+
+  Test data: [7, 5, 8, 6.5, 0, 8.5, 4, 0]
+ */
+
+const workHours = [7, 5, 8, 6.5, 0, 8.5, 5];
+
+const workTime = function (arr) {
+  const work = {
+    // accumulates the total hours worked
+    totalHours: 0,
+    // accumulates the total daily hours worked
+    avgDailyHours: 0,
+    // accumulates the total most hours worked
+    mostHours: 0,
+    // accumulates the total days hours worked
+    daysWorked: 0,
+  };
+
+  // Loop through the array and calculate the total hours worked
+  for (let freelanceApp of arr) {
+    work.totalHours += freelanceApp;
+    work.avgDailyHours = work.totalHours / arr.length;
+    work.daysWorked = arr.length;
+    work.mostHours = Math.max(...arr);
+
+    // Check if the total hours worked is full-time or part-time
+    if (work.totalHours >= 40) {
+      work.workType = "full-time";
+    } else {
+      work.workType = "part-time";
+    }
+  }
+  // Return the object
+  return work;
+};
+// Call the function and log the result
+console.log(workTime(workHours));
